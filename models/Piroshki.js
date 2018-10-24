@@ -1,14 +1,14 @@
 const piroshkiModel ={
     data: [
         {
-            name:'good stuff',
-            filling:'potato',
-            size: 3 + 'ounces'
+            name: 'good stuff',
+            filling: 'potato',
+            size: 3 
         },
         {
-            name: 'another piroshky',
+            name: 'another piroshki',
             filling: 'cottage cheese and onions',
-            size: 3 + 'ounces'
+            size: 3 
         }
     ],
 
@@ -25,11 +25,11 @@ const piroshkiModel ={
         return this.data[id];
     },
     updatePiroshki: function(id, name, filling, size){
-        data[id] = {name, filling, size};
+        this.data[id] = {name, filling, size};
     },
     deletePiroshki: function(id){
         return this.data.splice(id);
     }
 }
 
-module.exports = piroshki.Model;
+module.exports = piroshkiModel;

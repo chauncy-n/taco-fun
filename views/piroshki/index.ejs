@@ -4,18 +4,18 @@
 
 <a href="/piroshki/new">New</a>
     <h1>Piroshki</h1>
-    <% for (piroshki in piroshki) {%>
+    <% for (key in piroshki) {%>
         <hr>
-        <h3><%= piroshki[piroshki].name %></h3>
-        <h4><%= piroshki[piroshki].protein %></h4>
-        <p><%= piroshki[piroshki].garnish %></p>
-        <a href='/piroshki/<%= piroshki %>'><button>Show</button></a>
+        <h3><%= piroshki[key].name %></h3>
+        <h4><%= piroshki[key].filling %></h4>
+        <p><%= piroshki[key].size %></p>
+        <a href='/piroshki/<%= key %>'><button>Show</button></a>
         <br>
         <br>
-        <a href='/piroshki/<%= piroshki %>/edit'><button>Edit</button></a>
+        <a href='/piroshki/<%= key%>/edit'><button>Edit</button></a>
         <br>
         <br>
-        <form method="POST" action="/piroshki/<%= piroshki %>?_method=DELETE">
+        <form method="POST" action="/piroshki/<%= key %>?_method=DELETE">
             <button class="delete" type="submit">Delete</button>
         </form>
         <hr>

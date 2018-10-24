@@ -3,14 +3,14 @@ const Piroshki = require('../models/Piroshki');
 
 module.exports = {
     index: function(req, res, next){
-        res.render('piroshki/index', {piroshki: piroshkiModel.getAllPiroshki() });
+        res.render('piroshki/index', {piroshki: Piroshki.getAllPiroshki() });
     },
     new: function(req, res, next){
         res.render('piroshki/new');
     },
     create: function(req, res, next){
         let data = req.body;
-        Piroshki.addPiroshki(data.piroshkyName, data.piroshkiFilling, data.piroshkiSize);
+        Piroshki.addPiroshki(data.piroshkiName, data.piroshkiFilling, data.piroshkiSize);
         res.redirect('/piroshki');
     },
     show: function(req, res, next){

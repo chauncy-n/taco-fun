@@ -6,7 +6,7 @@ var path = require('path');
 var logger = require('morgan');
 
 var tacos = require('./routes/tacos');
-
+var piroshki = require('./routes/piroshki')
 
 
 var app = express();
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', tacos);
-
+app.use('/', piroshki)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
